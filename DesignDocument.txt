@@ -1,0 +1,31 @@
+
+The main objective of this project is to build our own text-based retrieval system. The first part of the assignment is to take a large collection of data and produce a dictionary of words. The second part of the assignment is to building the searching module with Vector Space Model of information Retrieval.
+
+Python is the programming language that is used by us to design the entire retrieval system. One of the major reasons we chose Python is because of its vast amount of in-built functions for handling and maintaining data structures as well as strings. This makes the code easier to handle for debugging compared to other programming languages. Other libraries like NumPy and SciPy were for performing matrix manipulations.
+
+CORPUS
+NLTK Data is the corpus used for creating our dictionary. A total of 16,359 files.
+
+JUPYTER Notebook has been used to create a proper documentation for the entire project.
+
+ARCHITECTURE
+1. The retrieval system is based on a vector-space retrieval model. 
+
+2. NLTK Data is used for getting the file IDs of the existing files in the database that the user might search for. 
+
+3. The file-IDs are stored in a list. This Python list serves as a reference for searches made by the user. 
+   Samples of text and words are collected from different formats of text like Shakespearean Language, names, twitter language etc. 
+   
+4. Porter Stemmer Algorithm is used for normalization of words and removes certain endings of a word to convert it to a common root form. 
+   The code uses a inbuilt Porter Stemmer algorithm which is stored in a matrix. 
+   
+5. Build Term frequency sparse matrix using countVectorizer() of Scikit-Learn.
+
+6. Then we calculate the Inverse doc frequency for calculating tf-idf weights of words in the tf-idf sparse matrix.
+
+7. The final part of building the search database is creating a normalized tf-idf matrix by calculating Euclidean distance.
+
+8. Get the query and convert it to a vector of tf-idf values.
+
+9. Calculate Cosine Similarities by calculating dop product of query vector with each Document vector in Normalised Tf-idf matrix
+10.Output the file-IDs and Corresponding Corpus by sorting the cosine similarities.
